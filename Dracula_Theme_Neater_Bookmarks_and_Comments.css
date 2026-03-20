@@ -1,0 +1,1026 @@
+/* =========================================================
+   vBookmarks / Neater Bookmarks
+   Dracula Theme - Medium Adjustable
+   SUPER COMMENTED / SUPER COMMENTATA
+   Italian + English
+   ========================================================= */
+
+
+/* =========================================================
+   IMPORT FONT
+   IMPORTAZIONE DEL FONT
+   ========================================================= */
+
+/* ITA:
+   Importa il font "Russo One" da Google Fonts.
+   Questo font verrà poi usato su quasi tutta l'interfaccia.
+
+   ENG:
+   Imports the "Russo One" font from Google Fonts.
+   This font will then be used across almost the whole interface.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+
+/* =========================================================
+   ROOT VARIABLES
+   VARIABILI GLOBALI
+   ========================================================= */
+
+/* ITA:
+   :root contiene le variabili globali del tema.
+   Il vantaggio è enorme: cambi un valore qui e si aggiorna
+   automaticamente in tutti i punti dove viene usato.
+
+   ENG:
+   :root contains the global theme variables.
+   This is very useful: change one value here and it updates
+   automatically everywhere that variable is used.
+*/
+:root {
+
+    /* =====================================================
+       MAIN BACKGROUND COLORS
+       COLORI PRINCIPALI DI SFONDO
+       ===================================================== */
+
+    /* ITA:
+       Colore di sfondo principale dell'interfaccia.
+       È il classico sfondo Dracula.
+
+       ENG:
+       Main interface background color.
+       This is the classic Dracula background.
+    */
+    --bg-main: #282A36;
+
+    /* ITA:
+       Colore superiore del gradiente dei pannelli.
+
+       ENG:
+       Top color of the panel gradient.
+    */
+    --bg-panel-top: #2A2D39;
+
+    /* ITA:
+       Colore inferiore del gradiente dei pannelli.
+
+       ENG:
+       Bottom color of the panel gradient.
+    */
+    --bg-panel-bottom: #282A36;
+
+    /* ITA:
+       Sfondo tenue dei singoli elementi:
+       preferiti, cartelle, righe cliccabili, ecc.
+
+       ENG:
+       Soft background for individual items:
+       bookmarks, folders, clickable rows, etc.
+    */
+    --bg-soft: rgba(68, 71, 90, 0.14);
+
+    /* ITA:
+       Sfondo più intenso, usato per elementi tipo
+       la barra di ricerca.
+
+       ENG:
+       Stronger background, used for elements such
+       as the search bar.
+    */
+    --bg-soft-strong: rgba(68, 71, 90, 0.88);
+
+    /* =====================================================
+       BORDER COLORS
+       COLORI DEI BORDI
+       ===================================================== */
+
+    /* ITA:
+       Bordo molto tenue dei singoli elementi.
+
+       ENG:
+       Very soft border for individual items.
+    */
+    --border-soft: rgba(98, 114, 164, 0.10);
+
+    /* ITA:
+       Bordo principale, leggermente più visibile.
+
+       ENG:
+       Main border color, slightly more visible.
+    */
+    --border-main: #6272A4;
+
+    /* =====================================================
+       TEXT COLORS
+       COLORI DEL TESTO
+       ===================================================== */
+
+    /* ITA:
+       Colore principale del testo dei preferiti.
+
+       ENG:
+       Main text color for bookmark items.
+    */
+    --text-main: #EAEAF2;
+
+    /* ITA:
+       Colore del testo delle cartelle.
+
+       ENG:
+       Text color for folder items.
+    */
+    --text-folder: #E8C8F1;
+
+    /* ITA:
+       Colore secondario del testo.
+       Utile per placeholder e dettagli meno importanti.
+
+       ENG:
+       Secondary text color.
+       Useful for placeholders and less important details.
+    */
+    --text-soft: #A4A9C7;
+
+    /* =====================================================
+       ACCENT COLORS
+       COLORI DI ACCENTO
+       ===================================================== */
+
+    /* ITA:
+       Rosa Dracula, usato come accento secondario.
+
+       ENG:
+       Dracula pink, used as a secondary accent.
+    */
+    --accent-pink: #FF79C6;
+
+    /* ITA:
+       Viola Dracula, usato per selezione/focus.
+
+       ENG:
+       Dracula purple, used for selection/focus.
+    */
+    --accent-purple: #BD93F9;
+
+    /* ITA:
+       Azzurro/ciano Dracula, usato per hover e dettagli luminosi.
+
+       ENG:
+       Dracula cyan, used for hover and bright highlights.
+    */
+    --accent-cyan: #8BE9FD;
+
+    /* =====================================================
+       TREE / FOLDER STRUCTURE COLORS
+       COLORI DELLA STRUTTURA AD ALBERO
+       ===================================================== */
+
+    /* ITA:
+       Colore base delle linee che indicano la gerarchia
+       delle cartelle annidate.
+
+       ENG:
+       Base color of the lines showing nested folder hierarchy.
+    */
+    --tree-line: rgba(255,255,255,0.05);
+
+    /* ITA:
+       Colore della struttura albero quando si illumina in hover.
+
+       ENG:
+       Tree structure color when it brightens on hover.
+    */
+    --tree-line-strong: rgba(139,233,253,0.18);
+
+    /* =====================================================
+       DENSITY / COMPACTNESS SETTINGS
+       IMPOSTAZIONI DI COMPATTEZZA
+       ===================================================== */
+
+    /* ITA:
+       Queste variabili regolano quanto è compatta o ariosa
+       l'interfaccia.
+       Se vuoi farla più densa o più grande, tocca soprattutto qui.
+
+       ENG:
+       These variables control how compact or spacious
+       the interface feels.
+       If you want it denser or larger, this is the main place to tweak.
+    */
+
+    /* ITA:
+       Dimensione generale del testo degli elementi.
+
+       ENG:
+       General font size for the items.
+    */
+    --ui-font-size: 13px;
+
+    /* ITA:
+       Altezza di riga del testo.
+       Valore più alto = più aria verticale.
+       Valore più basso = aspetto più compatto.
+
+       ENG:
+       Text line height.
+       Higher value = more vertical breathing room.
+       Lower value = more compact look.
+    */
+    --ui-line-height: 1.35em;
+
+    /* ITA:
+       Padding verticale interno degli elementi.
+
+       ENG:
+       Vertical internal padding of items.
+    */
+    --item-padding-y: 4px;
+
+    /* ITA:
+       Padding orizzontale interno degli elementi.
+
+       ENG:
+       Horizontal internal padding of items.
+    */
+    --item-padding-x: 9px;
+
+    /* ITA:
+       Margine verticale esterno tra un elemento e l'altro.
+
+       ENG:
+       Vertical outer margin between items.
+    */
+    --item-margin-y: 2px;
+
+    /* ITA:
+       Margine orizzontale esterno degli elementi.
+
+       ENG:
+       Horizontal outer margin of items.
+    */
+    --item-margin-x: 4px;
+
+    /* ITA:
+       Grandezza testo della barra di ricerca.
+
+       ENG:
+       Search bar text size.
+    */
+    --search-font-size: 13px;
+
+    /* ITA:
+       Padding verticale della barra di ricerca.
+
+       ENG:
+       Vertical padding of the search bar.
+    */
+    --search-padding-y: 6px;
+
+    /* ITA:
+       Padding orizzontale della barra di ricerca.
+
+       ENG:
+       Horizontal padding of the search bar.
+    */
+    --search-padding-x: 10px;
+
+    /* =====================================================
+       TREE INDENT / CONNECTORS
+       RIENTRANZA E CONNETTORI DELL'ALBERO
+       ===================================================== */
+
+    /* ITA:
+       Rientranza del primo livello annidato.
+
+       ENG:
+       Indentation of the first nested level.
+    */
+    --tree-indent: 11px;
+
+    /* ITA:
+       Rientranza dei livelli ancora più profondi.
+
+       ENG:
+       Indentation of deeper nested levels.
+    */
+    --tree-indent-inner: 9px;
+
+    /* ITA:
+       Posizione verticale del trattino orizzontale che collega
+       gli elementi figli al ramo.
+
+       ENG:
+       Vertical position of the small horizontal connector
+       linking child items to the branch.
+    */
+    --tree-connector-top: 14px;
+
+    /* ITA:
+       Lunghezza del trattino orizzontale della struttura albero.
+
+       ENG:
+       Length of the tree connector line.
+    */
+    --tree-connector-width: 9px;
+}
+
+
+/* =========================================================
+   GLOBAL FONT + TEXT RENDERING
+   FONT GLOBALE + RESA TESTO
+   ========================================================= */
+
+/* ITA:
+   Questo blocco applica il font scelto e alcune ottimizzazioni
+   di rendering a molti elementi dell'interfaccia.
+
+   ENG:
+   This block applies the chosen font and some text rendering
+   tweaks to many interface elements.
+*/
+body,
+input,
+button,
+span,
+a,
+i,
+li,
+ul,
+div {
+    /* ITA: Applica Russo One.
+       ENG: Applies Russo One.
+    */
+    font-family: "Russo One", sans-serif !important;
+
+    /* ITA: Peso normale del font.
+       ENG: Normal font weight.
+    */
+    font-weight: 400 !important;
+
+    /* ITA: Elimina ombre sul testo.
+       ENG: Removes text shadows.
+    */
+    text-shadow: none !important;
+
+    /* ITA:
+       Tentativi di migliorare la nitidezza.
+       Su alcuni sistemi aiutano un po', su altri cambiano poco.
+
+       ENG:
+       Attempts to improve text sharpness.
+       On some systems they help a bit, on others they change very little.
+    */
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    font-smooth: always !important;
+    text-rendering: geometricPrecision !important;
+}
+
+
+/* =========================================================
+   GLOBAL BACKGROUND / TEXT BASE
+   BASE GENERALE SFONDO / TESTO
+   ========================================================= */
+
+/* ITA:
+   Applica sfondo e colore testo ai contenitori principali.
+
+   ENG:
+   Applies background and text color to the main containers.
+*/
+html,
+body,
+#container,
+#mainSection,
+#results,
+#tree,
+#search {
+    background: var(--bg-main) !important;
+    color: var(--text-main) !important;
+}
+
+
+/* =========================================================
+   SEARCH AREA CONTAINER
+   CONTENITORE AREA RICERCA
+   ========================================================= */
+
+/* ITA:
+   #search è la fascia che contiene la casella di ricerca.
+
+   ENG:
+   #search is the area containing the search field.
+*/
+#search {
+    /* ITA: Linea inferiore divisoria.
+       ENG: Bottom divider line.
+    */
+    border-bottom: 1px solid rgba(98, 114, 164, 0.28) !important;
+
+    /* ITA: Piccolo padding interno del contenitore.
+       ENG: Small inner padding for the container.
+    */
+    padding: 3px 6px !important;
+}
+
+
+/* =========================================================
+   SEARCH INPUT FIELD
+   CAMPO INPUT DELLA RICERCA
+   ========================================================= */
+
+#search input {
+    /* ITA: Sfondo del campo.
+       ENG: Field background.
+    */
+    background: var(--bg-soft-strong) !important;
+
+    /* ITA: Colore del testo digitato.
+       ENG: Typed text color.
+    */
+    color: var(--text-main) !important;
+
+    /* ITA: Bordo del campo.
+       ENG: Field border.
+    */
+    border: 1px solid var(--border-main) !important;
+
+    /* ITA: Angoli arrotondati.
+       ENG: Rounded corners.
+    */
+    border-radius: 9px !important;
+
+    /* ITA: Padding controllato dalle variabili.
+       ENG: Padding controlled by variables.
+    */
+    padding: var(--search-padding-y) var(--search-padding-x) !important;
+
+    /* ITA: Dimensione testo input.
+       ENG: Input text size.
+    */
+    font-size: var(--search-font-size) !important;
+
+    /* ITA: Altezza riga dell'input.
+       ENG: Input line height.
+    */
+    line-height: 1.25 !important;
+
+    /* ITA: Nessuna ombra.
+       ENG: No shadow.
+    */
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+/* ITA: Colore del placeholder.
+   ENG: Placeholder color.
+*/
+#search input::placeholder {
+    color: var(--text-soft) !important;
+}
+
+/* ITA:
+   Stato focus: quando clicchi dentro la ricerca.
+
+   ENG:
+   Focus state: when you click into the search field.
+*/
+#search input:focus {
+    outline: none !important;
+    border-color: var(--accent-cyan) !important;
+    box-shadow: 0 0 0 2px rgba(139,233,253,0.12) !important;
+}
+
+
+/* =========================================================
+   MAIN PANELS
+   PANNELLI PRINCIPALI
+   ========================================================= */
+
+/* ITA:
+   #results = area dei preferiti / risultati
+   #tree    = area struttura cartelle
+
+   ENG:
+   #results = bookmarks / results area
+   #tree    = folder tree area
+*/
+#results,
+#tree {
+    background: linear-gradient(180deg, var(--bg-panel-top) 0%, var(--bg-panel-bottom) 100%) !important;
+}
+
+
+/* =========================================================
+   LIST RESET
+   RESET DELLE LISTE
+   ========================================================= */
+
+/* ITA:
+   Riduce margini/padding di default delle liste UL.
+
+   ENG:
+   Reduces default margins/padding of UL lists.
+*/
+#results ul,
+#tree ul {
+    margin: 1px 0 !important;
+    padding: 0 !important;
+}
+
+/* ITA:
+   Reset base degli LI.
+   position: relative è fondamentale per usare bene
+   ::before e ::after.
+
+   ENG:
+   Base reset for LI elements.
+   position: relative is essential to properly use
+   ::before and ::after.
+*/
+#results ul li,
+#tree ul li {
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+}
+
+
+/* =========================================================
+   MAIN CLICKABLE ITEMS
+   ELEMENTI CLICCABILI PRINCIPALI
+   ========================================================= */
+
+/* ITA:
+   Questo è uno dei blocchi più importanti:
+   definisce lo stile dei preferiti e delle cartelle.
+
+   ENG:
+   This is one of the most important blocks:
+   it defines the look of bookmarks and folders.
+*/
+#results ul li a,
+#tree ul li a,
+#tree ul li span {
+    /* ITA: Colore testo base.
+       ENG: Base text color.
+    */
+    color: var(--text-main) !important;
+
+    /* ITA: Sfondo leggero del blocco.
+       ENG: Light block background.
+    */
+    background: var(--bg-soft) !important;
+
+    /* ITA: Spazio interno.
+       ENG: Inner spacing.
+    */
+    padding: var(--item-padding-y) var(--item-padding-x) !important;
+
+    /* ITA: Spazio esterno.
+       ENG: Outer spacing.
+    */
+    margin: var(--item-margin-y) var(--item-margin-x) !important;
+
+    /* ITA: Arrotondamento angoli.
+       ENG: Rounded corners.
+    */
+    border-radius: 8px !important;
+
+    /* ITA: Altezza riga del testo.
+       ENG: Text line height.
+    */
+    line-height: var(--ui-line-height) !important;
+
+    /* ITA: Grandezza testo.
+       ENG: Text size.
+    */
+    font-size: var(--ui-font-size) !important;
+
+    /* ITA:
+       Leggerissima spaziatura lettere.
+       A volte aiuta la leggibilità.
+
+       ENG:
+       Very slight letter spacing.
+       Sometimes helps readability.
+    */
+    letter-spacing: 0.1px !important;
+
+    /* ITA: Nessuna sottolineatura standard.
+       ENG: No standard underline.
+    */
+    text-decoration: none !important;
+
+    /* ITA: Bordo leggero.
+       ENG: Light border.
+    */
+    border: 1px solid var(--border-soft) !important;
+
+    /* ITA: Nessuna ombra.
+       ENG: No shadow.
+    */
+    box-shadow: none !important;
+    text-shadow: none !important;
+
+    /* ITA:
+       Transizioni fluide per hover e piccoli movimenti.
+
+       ENG:
+       Smooth transitions for hover and small movement effects.
+    */
+    transition:
+        background-color .14s ease,
+        border-color .14s ease,
+        transform .08s ease !important;
+}
+
+/* ITA:
+   Le cartelle usano un colore testo diverso dai preferiti.
+
+   ENG:
+   Folders use a different text color from bookmarks.
+*/
+#tree ul li span,
+#tree ul li a {
+    color: var(--text-folder) !important;
+}
+
+/* ITA:
+   I preferiti mantengono il colore principale.
+
+   ENG:
+   Bookmarks keep the main text color.
+*/
+#results ul li a {
+    color: var(--text-main) !important;
+}
+
+
+/* =========================================================
+   TREE STRUCTURE / NESTING
+   STRUTTURA AD ALBERO / ANNIDAMENTO
+   ========================================================= */
+
+/* ITA:
+   Le sottoliste vengono rientrate e ricevono una linea verticale
+   per far capire la gerarchia.
+
+   ENG:
+   Nested lists are indented and get a vertical line
+   to visually show hierarchy.
+*/
+#tree ul ul {
+    margin-left: var(--tree-indent) !important;
+    padding-left: var(--tree-indent) !important;
+    border-left: 1px solid var(--tree-line) !important;
+}
+
+/* ITA:
+   Livelli ancora più annidati ricevono una rientranza ulteriore.
+
+   ENG:
+   Deeper nested levels get additional indentation.
+*/
+#tree ul ul ul {
+    margin-left: var(--tree-indent-inner) !important;
+    padding-left: var(--tree-indent) !important;
+}
+
+/* ITA:
+   Questo pseudo-elemento disegna il piccolo trattino orizzontale
+   che collega ogni elemento figlio al ramo verticale.
+
+   ENG:
+   This pseudo-element draws the small horizontal line
+   connecting each child item to the vertical branch.
+*/
+#tree ul ul > li::before {
+    content: "" !important;
+    position: absolute !important;
+    left: calc(var(--tree-indent) * -1) !important;
+    top: var(--tree-connector-top) !important;
+    width: var(--tree-connector-width) !important;
+    height: 1px !important;
+    background: var(--tree-line) !important;
+    pointer-events: none !important;
+}
+
+/* ITA:
+   Quando passi sopra una zona annidata, il trattino si illumina.
+
+   ENG:
+   When hovering a nested area, the connector line brightens.
+*/
+#tree ul ul > li:hover::before {
+    background: var(--tree-line-strong) !important;
+}
+
+/* ITA:
+   Anche la linea verticale del ramo si illumina.
+
+   ENG:
+   The vertical branch line also brightens.
+*/
+#tree ul ul:hover {
+    border-left-color: var(--tree-line-strong) !important;
+}
+
+
+/* =========================================================
+   HOVER STATE
+   STATO HOVER
+   ========================================================= */
+
+/* ITA:
+   Questo è il famoso effetto "azzurrino acceso".
+   Quando il mouse passa sopra un elemento:
+   - lo sfondo si illumina
+   - il bordo diventa più visibile
+   - appare un piccolo alone
+   - il blocco si solleva leggermente
+
+   ENG:
+   This is the bright cyan hover effect.
+   When the mouse moves over an item:
+   - the background lights up
+   - the border becomes more visible
+   - a subtle glow appears
+   - the block lifts slightly
+*/
+#results ul li a:hover,
+#tree ul li a:hover,
+#tree ul li span:hover {
+    background: rgba(139,233,253,0.16) !important;
+    border-color: rgba(139,233,253,0.34) !important;
+    box-shadow: 0 0 8px rgba(139,233,253,0.10) !important;
+    text-decoration: none !important;
+    transform: translateY(-1px) !important;
+}
+
+
+/* =========================================================
+   UNIFORM HOVER UNDERLINE
+   SOTTOLINEATURA UNIFORME IN HOVER
+   ========================================================= */
+
+/* ITA:
+   Invece di usare la vera underline del testo,
+   qui si disegna una linea artificiale sotto tutto il blocco.
+   Così passa anche sotto l'icona/cartellina e non solo sotto il testo.
+
+   ENG:
+   Instead of using the real text underline,
+   this draws an artificial line under the whole block.
+   This way it also runs under the icon/folder symbol,
+   not just under the text.
+*/
+#results ul li a:hover::after,
+#tree ul li a:hover::after,
+#tree ul li span:hover::after {
+    content: "" !important;
+    position: absolute !important;
+
+    /* ITA:
+       Distanza della linea dai lati sinistro e destro.
+       Riduci il valore = linea più lunga.
+       Aumenta il valore = linea più corta.
+
+       ENG:
+       Distance of the line from the left and right edges.
+       Lower value = longer line.
+       Higher value = shorter line.
+    */
+    left: 9px !important;
+    right: 9px !important;
+
+    /* ITA:
+       Distanza dal bordo inferiore.
+       Valore più piccolo = più in basso.
+       Valore più grande = più in alto.
+
+       ENG:
+       Distance from the bottom edge.
+       Smaller value = lower.
+       Larger value = higher.
+    */
+    bottom: 3px !important;
+
+    /* ITA: Spessore della linea.
+       ENG: Line thickness.
+    */
+    height: 2px !important;
+
+    /* ITA: Colore della linea.
+       ENG: Line color.
+    */
+    background: var(--accent-cyan) !important;
+
+    /* ITA: Estremità arrotondate.
+       ENG: Rounded ends.
+    */
+    border-radius: 999px !important;
+
+    opacity: 1 !important;
+    pointer-events: none !important;
+}
+
+/* ITA:
+   Evita decorazioni strane su elementi interni in hover.
+
+   ENG:
+   Prevents weird decoration effects on inner elements during hover.
+*/
+#results ul li a:hover i,
+#tree ul li a:hover i {
+    text-decoration: none !important;
+}
+
+
+/* =========================================================
+   ACTIVE / FOCUS STATE
+   STATO ATTIVO / FOCUS
+   ========================================================= */
+
+/* ITA:
+   Questo blocco entra in gioco quando un elemento è attivo,
+   selezionato o riceve focus.
+
+   ENG:
+   This block applies when an element is active,
+   selected, or focused.
+*/
+#results ul li a:active,
+#results ul li a.active,
+#results ul li a:focus,
+#tree ul li a:active,
+#tree ul li a.active,
+#tree ul li a:focus,
+#tree ul li span:active,
+#tree ul li span.active,
+#tree ul li span:focus,
+menu[type=context] command:focus {
+    /* ITA: Sfondo viola selezione.
+       ENG: Purple selection background.
+    */
+    background: rgba(189,147,249,0.90) !important;
+
+    /* ITA: Testo scuro per contrasto.
+       ENG: Dark text for contrast.
+    */
+    color: #282A36 !important;
+
+    border-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   FOLDER TWISTY / ARROW
+   FRECCETTA DELLE CARTELLE
+   ========================================================= */
+
+/* ITA:
+   .twisty è il piccolo triangolino che indica
+   apertura/chiusura delle cartelle.
+
+   ENG:
+   .twisty is the little triangle showing whether
+   a folder is open or closed.
+*/
+#tree ul li span .twisty {
+    border-color: transparent transparent transparent var(--accent-cyan) !important;
+}
+
+
+/* =========================================================
+   ICONS / FAVICONS
+   ICONE / FAVICON
+   ========================================================= */
+
+/* ITA:
+   Qui regoli leggermente l'aspetto delle icone:
+   opacità, saturazione, luminosità e spazio dal testo.
+
+   ENG:
+   Here you slightly adjust icon appearance:
+   opacity, saturation, brightness, and spacing from the text.
+*/
+#results ul li a img,
+#results ul li span img,
+#tree ul li a img,
+#tree ul li span img {
+    opacity: 0.96 !important;
+    filter: saturate(1.04) brightness(1.02) !important;
+    margin-right: 5px !important;
+}
+
+
+/* =========================================================
+   CONTEXT MENU
+   MENU CONTESTUALE
+   ========================================================= */
+
+/* ITA:
+   Questo è il menu del tasto destro.
+
+   ENG:
+   This is the right-click context menu.
+*/
+menu[type=context] {
+    background: rgba(40, 42, 54, 0.98) !important;
+    color: var(--text-main) !important;
+    border: 1px solid rgba(98,114,164,0.24) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.30) !important;
+}
+
+/* ITA:
+   Singole voci del menu contestuale.
+
+   ENG:
+   Individual context menu entries.
+*/
+menu[type=context] command {
+    color: var(--text-main) !important;
+    border-radius: 8px !important;
+    margin: 1px 5px !important;
+    padding: 4px 9px !important;
+    font-size: var(--ui-font-size) !important;
+    text-shadow: none !important;
+}
+
+/* ITA:
+   Hover delle voci del menu contestuale.
+
+   ENG:
+   Hover state for context menu entries.
+*/
+menu[type=context] command:hover {
+    background: rgba(139,233,253,0.10) !important;
+    color: #FFFFFF !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   BARRA DI SCORRIMENTO
+   ========================================================= */
+
+/* ITA:
+   Dimensione della scrollbar verticale e orizzontale.
+
+   ENG:
+   Size of vertical and horizontal scrollbars.
+*/
+::-webkit-scrollbar {
+    width: 13px !important;
+    height: 13px !important;
+}
+
+/* ITA:
+   Traccia della scrollbar.
+
+   ENG:
+   Scrollbar track.
+*/
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+    background: var(--bg-main) !important;
+    border-radius: 13px !important;
+}
+
+/* ITA:
+   Parte mobile della scrollbar (thumb).
+
+   ENG:
+   Draggable part of the scrollbar (thumb).
+*/
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #55618D 0%, #8BE9FD 100%) !important;
+    border-radius: 13px !important;
+    border: 3px solid var(--bg-main) !important;
+}
+
+/* ITA:
+   Hover della scrollbar.
+
+   ENG:
+   Hover state of the scrollbar.
+*/
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #8BE9FD 0%, #BD93F9 100%) !important;
+}
+
+/* ITA:
+   Angolo tra scrollbar verticale e orizzontale.
+
+   ENG:
+   Corner where vertical and horizontal scrollbars meet.
+*/
+::-webkit-scrollbar-corner {
+    background: var(--bg-main) !important;
+}
