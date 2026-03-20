@@ -1,0 +1,1 @@
+This is a CSS [Dracula-style](https://draculatheme.com/) theme for [vBookmarks/Neater Bookmarks](https://github.com/windviki/vBookmarks) extension. Of course, this theme works perfectly with the theme [Dracula](https://draculatheme.com/google-chrome) for Chrome/Firefox
